@@ -2,6 +2,10 @@ body {
     margin: 10px 0 0 0;
 }
 
+.boton-accion {
+    padding: 20px;
+}
+
 .room {
     margin: auto; /* Para que aparezca centrado */
     width: 50%;

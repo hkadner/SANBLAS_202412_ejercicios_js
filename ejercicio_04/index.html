@@ -7,41 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="room">
+    <div>
+        <button id="boton-dobles" class="boton-accion">Dobles</button>
+        <button id="boton-simples" class="boton-accion">Simples</button>
+    </div>
+    <div class="room doble">
         <div class="imagen">
             <img src="https://mayer-house.b-cdn.net/wp-content/uploads/2022/04/Suites-high-rez-4-500x500.jpg">
+        </div>
+        <div class="contenido">
+            <span>Precio (doble): 100€</span>
+        </div>
+    </div>
+    <div class="room simple">
+        <div class="imagen">
+            <img src="https://westcordhotels.com/wp-content/uploads/2022/07/westcord-hotels-strandhotel-seeduyn-appartement-extra-large-kamer-01-400x400.jpg">
+        </div>
+        <div class="contenido">
+            <span>Precio (simple): 100€</span>
+        </div>
+    </div>
+    <div class="room doble">
+        <div class="imagen">
+            <img src="https://assets.milestoneinternet.com/cdn-cgi/image/f=auto/highgate-hotels/palacio-do-governador/website2024/images/deluxe-room-at-palacio-do-governador-lisbon-hotel-and-spa-2.jpg?width=400&height=400">
         </div>
         <div class="contenido">
             <span>Precio: 100€</span>
         </div>
     </div>
-    <div class="room">
+    <div class="room simple">
         <div class="imagen">
-            <img src="https://mayer-house.b-cdn.net/wp-content/uploads/2022/04/Suites-high-rez-4-500x500.jpg">
+            <img src="https://thehighlinehotel.com/wp-content/uploads/2019/04/HLH_room_v2.jpg">
         </div>
         <div class="contenido">
             <span>Precio: 100€</span>
         </div>
     </div>
-    <div class="room">
+    <div class="room doble">
         <div class="imagen">
-            <img src="https://mayer-house.b-cdn.net/wp-content/uploads/2022/04/Suites-high-rez-4-500x500.jpg">
-        </div>
-        <div class="contenido">
-            <span>Precio: 100€</span>
-        </div>
-    </div>
-    <div class="room">
-        <div class="imagen">
-            <img src="https://mayer-house.b-cdn.net/wp-content/uploads/2022/04/Suites-high-rez-4-500x500.jpg">
-        </div>
-        <div class="contenido">
-            <span>Precio: 100€</span>
-        </div>
-    </div>
-    <div class="room">
-        <div class="imagen">
-            <img src="https://mayer-house.b-cdn.net/wp-content/uploads/2022/04/Suites-high-rez-4-500x500.jpg">
+            <img src="https://assets.milestoneinternet.com/cdn-cgi/image/f=auto/highgate-hotels/sesimbra-oceanfront-hotel/rooms/ocean-view-deluxe-room-sesimbra-oceanfront-hotel-3.jpg?width=400&height=400">
         </div>
         <div class="contenido">
             <span>Precio: 100€</span>
@@ -50,6 +54,25 @@
 </body>
 </html>
 <script>
-    
+    document.querySelector("#boton-dobles").addEventListener("click",()=>{
+        document.querySelectorAll(".room").forEach((room)=>{
+            //room.style.opacity='0.5';
+            room.style.display='none';
+        });
+        document.querySelectorAll(".doble").forEach((room)=>{
+            //room.style.opacity='1';
+            room.style.display='block';
+        });
+    });
+    document.querySelector("#boton-simples").addEventListener("click",()=>{
+        document.querySelectorAll(".room").forEach((room)=>{
+            //room.style.opacity='0.5';
+            room.style.display='none';
+        });
+        document.querySelectorAll(".simple").forEach((room)=>{
+            //room.style.opacity='1';
+            room.style.display='block';
+        });
+    });
 </script>
 
