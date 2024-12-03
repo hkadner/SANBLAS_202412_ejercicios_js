@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03</title>
+</head>
+<body>
+    <div><h1 id="titulo-1">Título Nivel 1</h1></div>
+    <div><h2>Título Nivel 2</h2></div>
+    <div id="div-ct"><button id="boton-1">Cambiar Título 1</button></div>
+    <div><button>Cambiar Título 1</button></div>
+</body>
+</html>
+<script>
+    // document.getElementById('boton-1').innerHTML="Formatear";
+    function saludar() {
+        alert("Hola");
+    }
+    function cambiar() {
+        document.querySelector("#titulo-1").innerHTML = "Texto cambiado";
+    }
+    function descambiar() {
+        document.querySelector("#titulo-1").innerHTML = "Título Nivel 1";
+    }
+    document.getElementById("boton-1").addEventListener("click",saludar);
+    document.querySelector("#titulo-1").addEventListener("mouseenter",cambiar);
+    document.querySelector("#titulo-1").addEventListener("mouseleave",descambiar);
+</script>
