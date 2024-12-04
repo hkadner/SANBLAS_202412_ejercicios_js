@@ -26,18 +26,32 @@ body {
 }
 
 #form-seleccion button {
-    background-color: #333333; /* Fondo oscuro para botones */
-    color: #f5f5f5; /* Texto en blanco */
+    color: #fff; /* Texto blanco para los botones */
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Colores diferentes para cada botón */
+#form-seleccion button:nth-child(1) {
+    background-color: #1e88e5; /* Azul brillante */
+}
+
+#form-seleccion button:nth-child(2) {
+    background-color: #43a047; /* Verde brillante */
+}
+
+#form-seleccion button:nth-child(3) {
+    background-color: #f44336; /* Rojo brillante */
+}
+
+/* Efecto hover para cada botón */
 #form-seleccion button:hover {
-    background-color: #444444; /* Fondo gris más claro al pasar el ratón */
+    background-color: #333333; /* Fondo gris oscuro al pasar el ratón */
+    transform: scale(1.1); /* Agrandar ligeramente el botón */
 }
 
 /* Estilos para la lista de películas */
@@ -105,4 +119,3 @@ a:hover {
         align-items: center;
     }
 }
-
