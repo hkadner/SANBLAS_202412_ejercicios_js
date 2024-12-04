@@ -29,3 +29,8 @@ document.querySelector("#boton-comedia").addEventListener("click", () => {
         pelicula.style.display = "Block";
     });
 });
+document.querySelector("#boton-todas").addEventListener("click", () => {
+    document.querySelectorAll(".pelicula").forEach((pelicula) => {
+        pelicula.style.display = "Block";
+    });
+});
