@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f1 Championship</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <img src="./images/logo.png">
+    </div>
+    <div>
+        <img id="car1" class="car" src="./images/f1_1.avif">
+    </div>
+    <div>
+        <img id="car2" class="car" src="./images/f1_2.avif">
+    </div>
+</body>
+</html>
+<script>
+    var xCar1 = 0;//Margen izquierdo
+    var xCar2 = 0;//Margen izquierdo
+    document.querySelector("body").addEventListener("keydown",(event)=>{
+        if (event.code=='KeyP'){
+            console.log('PLAYER 1');
+            xCar1=xCar1+10;
+            document.querySelector("#car1").style.marginLeft=xCar1+'px';
+        } else if (event.code=='KeyQ'){
+            
+        }
+    });
+</script>
