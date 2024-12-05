@@ -1,3 +1,4 @@
 .car {
     width: 200px;
+    transition: all 0.25s;
 }
