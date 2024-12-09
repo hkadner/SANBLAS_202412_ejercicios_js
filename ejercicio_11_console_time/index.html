@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console - Time</title>
+</head>
+<body>
+    <script>
+        //Calculando el tiempo de ejecución de una función
+        function calcular(){
+            console.time("Calcular");
+            for(let i=0;i<1000;i++){
+                console.log("Calculando..."+i);
+            }
+            console.timeEnd("Calcular");
+        }
+        calcular();
+        //Sin identificador
+        console.time();
+        console.timeEnd();
+        //Con identificador
+        console.time("Proceso A");
+        console.timeEnd("Proceso A");
+    </script>
+</body>
+</html>

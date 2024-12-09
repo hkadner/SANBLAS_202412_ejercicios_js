@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button id="boton">Convertir</button> 
+</body>
+</html>
+<script>
+    //Mostrar el valor del campo input sin espacios en los extremos y en mayúsculas
+    //Métodos trim y toUpperCase
+    function convertir(){
+        //Solución 1
+        let texto = document.querySelector("#texto").value;
+        console.log("*"+texto+"*");
+        texto = texto.trim().toUpperCase();
+        console.log("*"+texto+"*");
+        
+        /*
+        //Solución 2
+        let texto = document.querySelector("#texto").value;
+        console.log("*"+texto+"*");
+        texto = texto.trim();
+        texto = texto.toUpperCase();
+        console.log("*"+texto+"*");
+        */
+        
+        /*
+        //Solución 3
+        let texto = document.querySelector("#texto").value.trim().toUpperCase();
+        console.log("*"+texto+"*");
+        */
+    }
+
+
+    document.querySelector("#boton").addEventListener("click",convertir);
+</script>

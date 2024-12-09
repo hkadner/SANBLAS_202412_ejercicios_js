@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos</title>
+</head>
+<body>
+    <!--
+    Un input de tipo texto.
+    Un input de tipo number.
+    Un input de tipo checkbox.
+    Un botón "Aceptar".
+    El botón aceptar guardar el contenido de los inputs en variables.
+    -->
+    <div><label for="texto">Nombre:</label><input type="text" name="" id="texto"></div>
+    <div><label for="numero">Edad:</label><input type="number" name="" id="numero"></div>
+    <div><label for="sino">Sí/No:</label><input type="checkbox" name="" id="sino"></div>
+    <div><button id="bAceptar">Aceptar</button></div>
+</body>
+</html>
+<script>
+    document.querySelector("#bAceptar").addEventListener("click",()=>{
+        let nombre = document.querySelector("#texto").value;
+        let numero = parseInt(document.querySelector("#numero").value);//Conversión
+        let sino = document.querySelector("#sino").checked;
+        let cadenaNumero = numero.toString();//Conversión
+        console.log(nombre);
+        console.log(numero);
+        console.log(sino);
+        console.log(cadenaNumero);
+        console.log(typeof nombre);//string
+        console.log(typeof numero);//number
+        console.log(typeof sino);//boolean
+        console.log(typeof cadenaNumero);//string
+    });
+</script>

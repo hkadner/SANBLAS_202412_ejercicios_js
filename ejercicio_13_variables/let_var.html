@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let y var</title>
+</head>
+<body>
+  <script>
+    //**********
+    //USO DE let y var EN FUNCIONES
+    function sumar() {
+        let s1 = 10;//Ámbito local
+        var s2 = 20;//Ámbito local, por estar dentro de una función
+    }
+    //console.log(s1);//ReferenceError
+    //console.log(s2);//ReferenceError
+    //*******
+    //USO DE let y var EN BLOQUES DE CÓDIGO
+    //*******
+    let numero = 10;
+    var resultado = 0;
+    if (numero > 5) {
+        let x = 10;//Local
+        var y = 20;//Global
+    }
+    //console.log(x);//undefined
+    console.log(y);//20
+    //*****
+    //Redeclaración de variables
+    //*****
+    //let numero = 10;//Error, no se puede declarar con let dos veces
+    numero = 20;
+    var resultado = 0;//Sí se puede declarar con var más de una vez
+
+  </script>  
+</body>
+</html>

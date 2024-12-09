@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    <script>
+        console.log(nombre);
+        //let nombre;//Provoca Reference error en línea 10
+        var nombre = 'Jesús';//Muestra undefined en línea 10
+
+        saludar();//Ejemplo de hosting en funciones
+        //copia();//Da error
+        function saludar(){
+            console.log("Hola");
+        }
+        let copia = saludar;
+        copia();
+    </script>
+</body>
+</html>
