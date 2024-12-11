@@ -1,0 +1,12 @@
+.poster {
+    width: 50%;
+}
+
+.serie {
+    width: 250px;
+    margin:auto;
+    padding: 1em;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
