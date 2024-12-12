@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Series</title>
 </head>
+
 <body>
     <audio id="audio-terror" src="terror.mp3">
         ¡Pringao!
@@ -42,37 +44,41 @@
             <div>Terror</div>
             <div><img class="poster" src='https://image.tmdb.org/t/p/original/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg'></div>
         </div>
-        <div class="serie terror">
+        <div class="serie terror" titulo="archivo 81">
             <div>Archivo 81</div>
             <div>Terror</div>
             <div><img class="poster" src='https://image.tmdb.org/t/p/original/as0QIRSbRCOE1nr6CZyOJmqQ1z3.jpg'></div>
         </div>
     </div>
 </body>
+
 </html>
 <script>
-    function seleccionarGenero(selectorGenero, bgColor){
+    function seleccionarGenero(selectorGenero, bgColor) {
         let series = document.querySelectorAll(selectorGenero);
-        series.forEach((serie)=>{
-            serie.style.backgroundColor=bgColor;
+        series.forEach((serie) => {
+            serie.style.backgroundColor = bgColor;
         });
     }
-    document.querySelector("#b-terror").addEventListener("click",(event)=>{   
-        seleccionarGenero(".serie","rgb(255,235,205)");     
-        seleccionarGenero(".terror","#FF4444");
+    document.querySelector("#b-terror").addEventListener("click", (event) => {
+        seleccionarGenero(".serie", "rgb(255,235,205)");
+        seleccionarGenero(".terror", "#FF4444");
         //let componenteAudio = document.querySelector("#audio-terror");
         //componenteAudio.play();
     });
 
-    document.querySelector("#b-accion").addEventListener("click",(event)=>{
-        seleccionarGenero(".serie","rgb(255,235,205)");     
-        seleccionarGenero(".accion",'orange');
+    document.querySelector("#b-accion").addEventListener("click", (event) => {
+        seleccionarGenero(".serie", "rgb(255,235,205)");
+        seleccionarGenero(".accion", 'orange');
     });
 
-    document.querySelector("#i-titulo").addEventListener("keyup",(event)=>{
-        let cadenaBusqueda = document.querySelector("#i-titulo").value;
+    let inputTitulo = document.querySelector("#i-titulo");
+    inputTitulo.addEventListener("input", (event) => {
+        let cadenaBusqueda = inputTitulo.value.toLowerCase();
         console.log(`Buscando ${cadenaBusqueda}`);
-    })
-
-//let x = document.querySelectorAll("[titulo*='ran']");
+        seleccionarGenero(".serie", "rgb(255,235,205)");
+        if (cadenaBusqueda.length > 0) {
+            seleccionarGenero(`[titulo*=${cadenaBusqueda}]`,'orange');
+        }
+    });
 </script>

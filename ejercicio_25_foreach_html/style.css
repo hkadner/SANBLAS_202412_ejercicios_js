@@ -1,12 +1,13 @@
 .poster {
-    width: 50%;
+    width: 100%;
 }
 
 .serie {
-    width: 250px;
-    margin:auto;
+    width: 150px;
+    margin: 1em;
     padding: 1em;
     background-color: blanchedalmond;
     border-radius: 5px;
     margin-bottom: 1em;
+    float: left;
 }
