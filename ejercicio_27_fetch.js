@@ -27,8 +27,8 @@ function processData(data) {//data (en este caso) es un array
    });
    */
 
-    data.filter(consola => consola.name.toUpperCase().includes("NINTENDO")).forEach(element => console.log(element.name));
-
+    data.filter(consola => consola.name.toUpperCase().includes("NINTENDO")).
+        forEach(element => console.log(element.name));
 }
 
 function doRequest(url) {
