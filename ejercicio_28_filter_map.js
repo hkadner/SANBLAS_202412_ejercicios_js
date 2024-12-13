@@ -31,8 +31,35 @@ playas.unshift(playa_4);//Agrega al principio
 console.log(playas);//Somo, Famara, Nazare, Pipeline
 
 //1. Filter de las playas de dificultad Experto
+playas.filter(playa=>{
+    return playa.dificultad==='Experto';
+}).forEach(playa=>{
+    console.log('Playa Experto:' + playa.nombre);
+});
 
 //2. Filter de las playas de España
+playas
+    .filter(playa=>playa.pais==='España')
+    .forEach(playa=>console.log('Playa España:' + playa.nombre));
 
 //3. Obtención del código HTML que representa una playa
 //<div class='playa'><div>Playa:Famara</div><div>País:España</div></div>
+
+playas
+    .map(playa=> {
+        return `<div class='playa'><div>Playa:${playa.nombre}</div><div>País:${playa.pais}</div></div>`;
+    })
+    .forEach(div=> {
+        console.log(div);
+    });
+
+playas
+    .map(playa=> `<div class='playa'><div>Playa:${playa.nombre}</div><div>País:${playa.pais}</div></div>`)
+    .forEach(div=> console.log(div));
+
+console.log("***********");
+
+playas
+    .filter(playa=>playa.dificultad==='Experto')
+    .map(playa=>`<div class='playa'><div>Playa:${playa.nombre}</div><div>País:${playa.pais}</div></div>`)
+    .forEach(lineaHTML=>console.log(lineaHTML));
