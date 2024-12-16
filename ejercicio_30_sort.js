@@ -33,3 +33,15 @@ const coche3 = {
 }
 
 let coches = [coche1, coche2, coche3];
+//Extendido
+/*
+coches.sort((c1, c2)=>{
+    return c1.velocidad - c2.velocidad;
+}).reverse();
+coches.forEach(c=>{
+    console.log(c.nombre);
+});
+*/
+coches.sort((c1,c2)=>c1.velocidad - c2.velocidad).reverse().forEach(coche => {
+    console.log(coche);
+});
