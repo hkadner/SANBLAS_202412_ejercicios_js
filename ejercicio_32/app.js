@@ -25,9 +25,25 @@ function generateCard(pelicula){
     nuevoContenido.appendChild(nuevoParrafoDirector);
     const textoDirector = document.createTextNode(pelicula.Director)
     nuevoParrafoDirector.appendChild(textoDirector);
+    //6. Año
+    //<p><strong>Año:</strong> 1972</p>
+    const nuevoParrafoAnyo = document.createElement("p");
+    const nuevaNegritaAnyo = document.createElement("strong");
+    nuevoParrafoAnyo.appendChild(nuevaNegritaAnyo);
+    nuevaNegritaAnyo.textContent = "Año: ";
+    nuevoContenido.appendChild(nuevoParrafoAnyo);
+    const textoAnyo = document.createTextNode(pelicula.Year)
+    nuevoParrafoAnyo.appendChild(textoAnyo);
+    //7. Género
+    //<p><span class="genre">Género:</span> Drama, Crimen</p>
+    const nuevoParrafoGenero = document.createElement("p");
+    const nuevoSpanGenero = document.createElement("span");
+    nuevoSpanGenero.setAttribute("class","genre");
+    nuevoSpanGenero.textContent = "Género: ";
+    nuevoParrafoGenero.appendChild(nuevoSpanGenero);
+    nuevoParrafoGenero.appendChild(document.createTextNode(pelicula.Genre));
+    nuevoContenido.appendChild(nuevoParrafoGenero);
 
-
-    
     //Último paso: Agregar al contenedor la ficha recién creada
     document.querySelector("#container").appendChild(nuevaCard);//Agregamos el div al contenedor
 }

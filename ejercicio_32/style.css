@@ -8,7 +8,7 @@ body {
 
 #container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+    grid-template-columns: repeat(5, 1fr); /* 4 tarjetas por fila */
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
