@@ -1,22 +1,28 @@
 const URL='https://fpaniaguajavascript.github.io/movies-250.json';
 
+let peliculas;
+
 function generateCard(pelicula){
     //1. Crear la tarjeta
     const nuevaCard = document.createElement("div");//Crea un elemento de tipo div
     nuevaCard.setAttribute("class","card");
+    
     //2. Crear la imagen
     const nuevaImg = document.createElement("img");
     nuevaImg.setAttribute("src", pelicula.Poster);
     nuevaImg.setAttribute("alt", `Póster de la película ${pelicula.Title}`);
     nuevaCard.appendChild(nuevaImg);
+    
     //3. Crear el contenido de la tarjeta
     const nuevoContenido = document.createElement("div");
     nuevoContenido.setAttribute("class","card-content");
     nuevaCard.appendChild(nuevoContenido);
+    
     //4. Crear el h3 del título <h3>El Padrino</h3>
     const nuevoTitulo = document.createElement("h3");
     nuevoTitulo.textContent = pelicula.Title;
     nuevoContenido.appendChild(nuevoTitulo);
+    
     //5. Crear el director <p><strong>Director:</strong> Francis Ford Coppola</p>
     const nuevoParrafoDirector = document.createElement("p");
     const nuevaNegrita = document.createElement("strong");
@@ -25,6 +31,7 @@ function generateCard(pelicula){
     nuevoContenido.appendChild(nuevoParrafoDirector);
     const textoDirector = document.createTextNode(pelicula.Director)
     nuevoParrafoDirector.appendChild(textoDirector);
+    
     //6. Año
     //<p><strong>Año:</strong> 1972</p>
     const nuevoParrafoAnyo = document.createElement("p");
@@ -34,6 +41,7 @@ function generateCard(pelicula){
     nuevoContenido.appendChild(nuevoParrafoAnyo);
     const textoAnyo = document.createTextNode(pelicula.Year)
     nuevoParrafoAnyo.appendChild(textoAnyo);
+    
     //7. Género
     //<p><span class="genre">Género:</span> Drama, Crimen</p>
     const nuevoParrafoGenero = document.createElement("p");
@@ -49,7 +57,7 @@ function generateCard(pelicula){
 }
 
 function processMovie(data) {
-    const peliculas = data.movies;
+    peliculas = data.movies;
     //FORMAS DE RECORRER ARRAYS Y OBJETOS
     /*
     //Recorremos con bucle for tradicional
@@ -72,6 +80,11 @@ function processMovie(data) {
     peliculas.forEach(pelicula => {
         generateCard(pelicula);
     });
+}
+
+function clearCards(){
+    //document.querySelector("#container").innerHTML="";//Chapuza
+    document.querySelectorAll(".card").forEach(card=>card.remove());//Elegante
 }
 
 doGetRequest(URL, processMovie);
