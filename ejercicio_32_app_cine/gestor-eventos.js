@@ -1,60 +1,40 @@
 document.querySelector("#b-titulo").addEventListener("click", () => {
-    clearCards();
-    const textoBusqueda = document.querySelector("#t-titulo").value;
-    const peliculasFiltradas =
-        peliculas.filter(pelicula =>
-            pelicula.Title
-                .toUpperCase()
-                .includes(textoBusqueda.trim().toUpperCase()));
-    /*peliculasFiltradas.forEach(pelicula => {
-        generateCard(pelicula);
-    });*/
-    peliculasFiltradas.map(generateCard);//Es equivalente a la estructura comentada
+    filtrarPeliculas("#t-titulo", "Title");
 });
+
+//Se busca por cada pulsación en la caja de Título
 /*
-//Se busca por cada pulsación
 document.querySelector("#t-titulo").addEventListener("input", () => {
-    clearCards();
-    const textoBusqueda = document.querySelector("#t-titulo").value;
-    const peliculasFiltradas =
-        peliculas.filter(pelicula =>
-            pelicula.Title
-                .toUpperCase()
-                .includes(textoBusqueda.trim().toUpperCase()));
-    peliculasFiltradas.forEach(pelicula => {
-        generateCard(pelicula);
-    });
+    filtrarPeliculas("#t-titulo","Title");
 });
 */
+
 document.querySelector("#b-actor").addEventListener("click", () => {
-    clearCards();
-    const textoBusqueda = document.querySelector("#t-actor").value;
-    const peliculasFiltradas =
-        peliculas.filter(pelicula =>
-            pelicula.Actors
-                .toUpperCase()
-                .includes(textoBusqueda.trim().toUpperCase()));
-    peliculasFiltradas.map(generateCard);//Es equivalente a la estructura comentada
+    filtrarPeliculas("#t-actor", "Actors");
 });
+
+//Se busca cuando se pulsa el botón de Buscar en la sección género
 /*
 document.querySelector("#b-genero").addEventListener("click", () => {
-    clearCards();
-    const textoBusqueda = document.querySelector("#s-genero").value;
-    const peliculasFiltradas =
-        peliculas.filter(pelicula =>
-            pelicula.Genre
-                .toUpperCase()
-                .includes(textoBusqueda.trim().toUpperCase()));
-    peliculasFiltradas.map(generateCard);//Es equivalente a la estructura comentada
+    filtrarPeliculas("#s-genero","Genre");
 });
 */
+
 document.querySelector("#s-genero").addEventListener("change", () => {
+    filtrarPeliculas("#s-genero", "Genre");
+});
+
+document.querySelector("#b-anyo").addEventListener("click", () => {
+    filtrarPeliculas("#t-anyo", "Year");
+});
+
+function filtrarPeliculas(idElementoBusqueda, nombreAtributoBusqueda) {
     clearCards();
-    const textoBusqueda = document.querySelector("#s-genero").value;
+    const textoBusqueda = document.querySelector(idElementoBusqueda).value;
     const peliculasFiltradas =
         peliculas.filter(pelicula =>
-            pelicula.Genre
+            pelicula[nombreAtributoBusqueda]
                 .toUpperCase()
                 .includes(textoBusqueda.trim().toUpperCase()));
-    peliculasFiltradas.map(generateCard);//Es equivalente a la estructura comentada
-});
+    peliculasFiltradas.map(generateCard);
+}
