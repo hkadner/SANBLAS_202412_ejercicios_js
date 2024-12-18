@@ -56,8 +56,27 @@ function generateCard(pelicula){
     document.querySelector("#container").appendChild(nuevaCard);//Agregamos el div al contenedor
 }
 
+function generarDesplegableGenero(peliculas){
+    //Extraemos los géneros del fichero json 
+    let setGeneros = new Set();
+    peliculas.forEach(pelicula=>{
+        let generos = pelicula.Genre.split(',').map(genero=>genero.trim());
+        generos.forEach(genero=>setGeneros.add(genero));
+    });
+    //<option value="drama">Drama</option>
+    let arrayGeneros = Array.from(setGeneros);
+    arrayGeneros.sort().forEach(genero=>{
+        let generoOption = document.createElement("option");
+        generoOption.setAttribute("value",genero.toLowerCase());
+        generoOption.textContent=genero;
+        document.querySelector("#s-genero").appendChild(generoOption);
+    });
+}
+
 function processMovie(data) {
     peliculas = data.movies;
+    generarDesplegableGenero(peliculas);
+
     //FORMAS DE RECORRER ARRAYS Y OBJETOS
     /*
     //Recorremos con bucle for tradicional

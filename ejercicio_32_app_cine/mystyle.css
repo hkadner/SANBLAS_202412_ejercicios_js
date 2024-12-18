@@ -20,11 +20,13 @@ select {
 }
 
 .card-content h3 {
-    font-size: 1.2em;
-    white-space: nowrap;
-    overflow: hidden;
+    font-size: 1.1em;
 }
 
 .card img {
     height: 70%;
+}
+
+.card-content p:nth-child(3),p:nth-child(4) {
+    font-size: 0.70em;
 }
