@@ -1,6 +1,7 @@
 const URL='https://fpaniaguajavascript.github.io/movies-250.json';
 
 let peliculas;
+let peliculasFiltradas;
 
 function generateCard(pelicula){
     //1. Crear la tarjeta
@@ -75,6 +76,8 @@ function generarDesplegableGenero(peliculas){
 
 function processMovie(data) {
     peliculas = data.movies;
+    //peliculasFiltradas = peliculas;//Ambos arrays son el mismo
+    peliculasFiltradas = Array.from(peliculas);//Crea un nuevo array
     generarDesplegableGenero(peliculas);
 
     //FORMAS DE RECORRER ARRAYS Y OBJETOS
