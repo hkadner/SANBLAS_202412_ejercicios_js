@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- establecer el idioma de la página en español -->
+<html lang="es">
+<head>
+<!--
+    Formato de Transformación de Unicode 8 bits. La UTF-8 es dominante para todos 
+    los países/lenguas en Internet  y está soportada por todos los sistemas operativos modernos 
+    y lenguajes de programación. 
+-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- referencia a la hoja de estilos "style.css" -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- referencia a la hoja de estilos "mystyle.css" -->
+    <link rel="stylesheet" href="mystyle.css">
+    
+    <!-- título de la pestaña del navegador -->
+    <title>Super Pelis</title>
+</head>
+<body>
+
+    <!-- Comienzo del diseño de la página por sectores 
+     con el identificativo "div-formulario"-->
+    <div id="div-formulario">
+
+        <!-- casilla de entrada de tipo texto para buscar por el título 
+         con el identificador "t-titulo"
+         y el texto "Título" dentro de la casilla -->
+        <input type="text" id="t-titulo" placeholder="Título">
+        
+        <!-- botón para buscar por título 
+         con el identificador "b-titulo" 
+         y el texto "Buscar" dentro del botón -->
+        <button id="b-titulo">Buscar</button>
+
+        <!-- casilla de entrada de tipo "texto" para búsqueda por actor 
+        con el identificador "t-actor"
+        y el texto "Actor" dentro de la casilla -->
+        <input type="text" id="t-actor" placeholder="Actor">
+
+        <!-- botón para buscar por actor 
+         con el identificador "b-actor"
+         y el texto "Buscar" dentro del botón -->
+        <button id="b-actor">Buscar</button>
+
+        <!-- casilla desplegable para seleccionar con el género de la película
+         con el identificador "s-genero" -->
+        <select id="s-genero">
+            <!--<option value="drama">Drama</option>-->
+        </select>
+
+        <!-- botón para buscar por género 
+         con el identificador "b-genero"
+         y el texto "Buscar" dentro del botón -->
+        <button id="b-genero">Buscar</button>
+
+        <!-- casilla del tipo "número"
+         con identificador "t-anyo"
+         y el texto "Año" dentro de ella 
+         y con un valor mínimo de 1900 y máximo de 2030-->
+        <input type="number" id="t-anyo" placeholder="Año" min="1900" max="2030">
+
+        <!-- botón para buscar por año
+         con el identificador "b-anyo"
+         y el texto "Buscar" dentro del botón-->
+        <button id="b-anyo">Buscar</button>
+
+        <!-- etiqueta para poner un selector tipo radio excluyente-->
+        <label for="r-asc">Duración ascendente</label>
+        
+        <input type="radio" id="r-asc" name="ordenar" value="ascendente" checked>
+        <label for="r-desc">Duración descendente</label>
+        <input type="radio" id="r-desc" name="ordenar" value="descendente">
+        <button id="b-ordenar">Ordenar</button>
+        <span id="contador"></span>       
+    </div>
+    <div id="container">
+        <!-- Tarjeta 1 -->
+        <!--
+        <div class="card">
+            <img src="https://via.placeholder.com/300x450" alt="Póster de película">
+            <div class="card-content">
+                <h3>El Padrino</h3>
+                <p><strong>Director:</strong> Francis Ford Coppola</p>
+                <p><strong>Año:</strong> 1972</p>
+                <p><span class="genre">Género:</span> Drama, Crimen</p>
+            </div>
+        </div>
+        -->
+    </div>
+</body>
+</html>
+<script src="./myhttp.js"></script>
+<script src="./app.js"></script>
+<script src="./gestor_busquedas.js"></script>
+<script src="./gestor_ordenacion.js"></script>
